@@ -1,0 +1,8 @@
+var Reviews=require('../models/Reviews');
+
+
+module.exports.allReviews=function(req,res){
+    Reviews.find({},function(err,result){
+        res.json(result);
+    });
+}

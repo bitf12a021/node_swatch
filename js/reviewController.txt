@@ -1,0 +1,19 @@
+//client side script 
+var app= angular.module('reviewApplication',['ngResource']);
+app.controller('reviewController',['$scope','$resource']);
+
+function reviewController($scope,$resource)
+{
+    var Reviews= $resource('/api/Reviews');
+    
+    $scope.message=[{msgtext:'Hello Sir'},
+                   {msgtext: 'How may I can help you!...'}];
+    
+    //get all messages
+    ChatMessages.query(function(results){
+    $scope.message=results; 
+});
+    
+   
+
+}
